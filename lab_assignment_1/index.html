@@ -55,6 +55,7 @@
         const calculate = document.getElementById('calculate');
         const result = document.getElementById('result');
         let numbers = [];
+        let sum = 0;
 
         add.addEventListener('click', () => {
             const number = parseFloat(numberInput.value);
@@ -72,7 +73,9 @@
                 result.innerHTML = "Please add at least one number first.";
                 return;
             }
-            const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+            for (let i = 0; i < numbers.length; i++) {
+           sum += numbers[i];
+            }
             result.innerHTML = `Total Sum: ${sum}`;
         });
     </script>
